@@ -1,8 +1,8 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route,Routes } from 'react-router-dom';
 import {
 	Home,
 	SeriesAll,
-	Series,
+	SeriesPage,
 	MovieAll,
 	MoviePage,
 	SearchAll,
@@ -11,29 +11,15 @@ import {
 
 const Ruotes = () => {
 	return (
-		<Switch>
-			<Route path='/'>
-				<Home />
-			</Route>
-			<Route path='/movie/all'>
-				<MovieAll />
-			</Route>
-			<Route path='/movie/:id'>
-				<MoviePage />
-			</Route>
-			<Route path='/series/:id'>
-				<Series />
-			</Route>
-			<Route path='/series/all'>
-				<SeriesAll />
-			</Route>
-			<Route path='/search/:id'>
-				<SearchAll />
-			</Route>
-			<Route path='/recent/favorites'>
-				<RecentFavorites />
-			</Route>
-		</Switch>
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='/movie/all' element={<MovieAll />} />
+			<Route path='/movie/:id' element={<MoviePage />} />
+			<Route path='/series/:id' element={<SeriesPage />} />
+			<Route path='/series/all' element={<SeriesAll />} />
+			<Route path='/search/:id' element={<SearchAll />} />
+			<Route path='/recent/favorites' element={<RecentFavorites />} />
+		</Routes>
 	);
 };
 

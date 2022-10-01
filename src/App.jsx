@@ -1,8 +1,10 @@
 import './App.css';
 import { Text, Heading, Box } from '@chakra-ui/react';
+import Routes from './routes/Ruotes';
+import { BrowserRouter } from 'react-router-dom';
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Box w='md' bg='brand.bg' p={4}>
 				<Heading color='brand.main'>Lorem Ipsum</Heading>
 				<Text color='brand.text'>
@@ -12,8 +14,9 @@ function App() {
 					culpa natus.
 				</Text>
 			</Box>
+				<Routes />
 			<div>esto es una prueba</div>
-		</>
+		</BrowserRouter>
 	);
 }
 
