@@ -1,5 +1,5 @@
 import './App.css';
-import { Text, Heading,Box } from '@chakra-ui/react';
+import { Text, Heading, Box } from '@chakra-ui/react';
 function App() {
 	return (
 		<>
