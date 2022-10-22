@@ -1,0 +1,22 @@
+.links {
+	border-right: 4px solid transparent;
+	font-weight: 600;
+	color: #474f5b;
+}
+.links:hover,
+.links-footer:hover {
+	transition: border-bottom 400ms ease;
+	border-right: 4px solid #670023;
+	color: #670023;
+}
+
+.links-focus,
+.links-footer-focus {
+	border-right: 4px solid #e71c61;
+	color: #e71c61;
+}
+
+* svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}

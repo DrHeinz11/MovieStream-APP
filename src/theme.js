@@ -1,7 +1,13 @@
 import { extendTheme } from '@chakra-ui/react';
 
 const colors = {
-	brand: { main: '#00e6f6', bg: '#082a3a', sub: '#1f6cab', text: '#c6e5ff' },
+	brand: {
+		main: '#e71c61',
+		bg: '#082a3a',
+		sub: '#670023',
+		text: '#c6e5ff',
+		gray: '#8090A5',
+	},
 };
 const fonts = {
 	heading: `'Roboto' ,sans-serif`,
