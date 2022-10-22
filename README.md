@@ -27,7 +27,7 @@ It has a rating section where you can rate the series you have seen before and r
 Picture by [Kelly Sikkema](https://unsplash.com/@kellysikkema)
 
 ## Technologies
-I used `React.Js`,`Redux Tollkit`, RTK Query,`ChakraUI` ...
+I used `React.Js`,`Redux Tollkit`, `RTK Query`,`ChakraUI` ...
 
 ## Setup
 - Download or clone the repository
