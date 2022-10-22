@@ -7,11 +7,11 @@ const General = () => {
 		<Stack>
 			<CategoryHeading>General</CategoryHeading>
 			<Stack>
-				<HStack className='links'>
+				<HStack className='links' cursor='pointer' justify='flex-start'>
 					<BsBoxArrowLeft />
 					<Text textTransform='uppercase'>setings</Text>
 				</HStack>
-				<HStack className='links'>
+				<HStack className='links' cursor='pointer' justify='flex-start'>
 					<AiFillSetting />
 					<Text textTransform='uppercase'>log out</Text>
 				</HStack>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ButtonLogo = () => {
 	return (
 		<Link to={'/'}>
-			<HStack _hover={{opacity:0.5}}>
+			<HStack mr='2' _hover={{ opacity: 0.5 }}>
 				<BsFillEyeFill style={{ width: '2rem', height: '2rem' }} />
 				<Heading as='h4' fontSize='2xl'>
 					MovieStream

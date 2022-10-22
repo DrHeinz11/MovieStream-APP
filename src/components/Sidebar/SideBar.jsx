@@ -1,13 +1,17 @@
-import { Divider, Stack } from '@chakra-ui/react';
-import { Library, Menu, Category, General, ButtonLogo } from './components';
+import { Stack } from '@chakra-ui/react';
+import { Library, Menu, Category, General } from './components';
 import { SideBarProvider } from './context/context';
 
 const SideBar = () => {
 	return (
 		<SideBarProvider>
-			<Stack gap='2' py='6' pl='8' borderInlineEnd='1px solid #c1c1c1'>
-				<ButtonLogo />
-				<Divider />
+			<Stack
+				display={{ base: 'none', md: 'flex' }}
+				gap='2'
+				pt='4'
+				pl='8'
+				borderInlineEnd='1px solid #c1c1c1'
+			>
 				<Menu />
 				<Library />
 				<Category />

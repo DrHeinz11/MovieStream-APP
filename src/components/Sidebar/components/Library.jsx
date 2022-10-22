@@ -8,7 +8,7 @@ const Library = () => {
 		<Stack gap='4'>
 			<CategoryHeading>Library</CategoryHeading>
 			<Stack gap='2'>
-				<CustomOption route='/recent/' title='Recent'>
+				<CustomOption route='/see-later/' title='See Later'>
 					<MdWatchLater />
 				</CustomOption>
 

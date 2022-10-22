@@ -16,27 +16,27 @@ const SeriesPage = () => {
 					culpa natus.
 				</Text>
 				<ButtonGroup>
-						<Link to='/search/123456'>
-							<Button size='md' colorScheme={'purple'}>
-								Search
-							</Button>
-						</Link>
-						<Link to='/recent/favorites'>
-							<Button size='md' colorScheme={'purple'}>
-								Favorites
-							</Button>
-						</Link>
-						<Link to='/movie/all'>
-							<Button size='md' colorScheme={'purple'}>
-								Movies
-							</Button>
-						</Link>
-						<Link to='/series/heading'>
-							<Button size='md' colorScheme={'purple'}>
-								Series
-							</Button>
-						</Link>
-					</ButtonGroup> 
+					<Link to='/search/123456'>
+						<Button size='md' colorScheme={'purple'}>
+							Search
+						</Button>
+					</Link>
+					<Link to='/recent/favorites'>
+						<Button size='md' colorScheme={'purple'}>
+							Favorites
+						</Button>
+					</Link>
+					<Link to='/movie/all'>
+						<Button size='md' colorScheme={'purple'}>
+							Movies
+						</Button>
+					</Link>
+					<Link to='/series/heading'>
+						<Button size='md' colorScheme={'purple'}>
+							Series
+						</Button>
+					</Link>
+				</ButtonGroup>
 			</Box>
 		</>
 	);

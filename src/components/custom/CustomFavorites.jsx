@@ -6,13 +6,13 @@ const CustomFavorites = () => {
 	const [favorites, setFavorites] = useState(false);
 	const handleFavorites = () => setFavorites(!favorites);
 
-    useEffect(()=>{
-        alert(`favorites:${favorites}`)
-    },[favorites])
+	useEffect(() => {
+		alert(`favorites:${favorites}`);
+	}, [favorites]);
 
 	return (
 		<Stack
-        className="favContainer"
+			className='favContainer'
 			align={'center'}
 			justify='center'
 			boxSize={'48px'}
@@ -22,7 +22,7 @@ const CustomFavorites = () => {
 				backdropFilter: ' blur(11.4px)',
 				border: '1px solid rgba(255, 255, 255, 0.03)',
 			}}
-            _hover={{backgroundColor:'red'}}
+			_hover={{ backgroundColor: 'red' }}
 			onClick={handleFavorites}
 		>
 			<MdFavoriteBorder style={{ width: '2rem', height: '2rem' }} />
