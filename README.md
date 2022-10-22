@@ -2,7 +2,7 @@
 MovieStreamAPP
 
 ## Demo link:
-Access my site at [YoMeAnimoAPP](https://yomeanimo-chakra.netlify.app/)
+Access my site at [MovieStreamAPP](https://moviestream-chakra.netlify.app/)
 
 ## Table of Content:
 
@@ -16,7 +16,7 @@ Access my site at [YoMeAnimoAPP](https://yomeanimo-chakra.netlify.app/)
 
 ## About The App
 [MovieStream App] This application provides an intuitive navigation through the latest releases.
-It has a search bar where you can find movie entertainment, anime, doramas, series and tv-shows.
+It has a search bar and filter tab where you can find movie entertainment, anime, doramas, series and tv-shows.
 You can access any of these options and watch in real time as it has a player included, you can also save your favorite series or movies which will be stored in the tab see later.
 It has a rating section where you can rate the series you have seen before and recommend the ones you liked.
 
