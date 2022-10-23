@@ -2,11 +2,11 @@ import { Stack } from '@chakra-ui/react';
 import { Library, Menu, Category, General } from './components';
 import { SideBarProvider } from './context/context';
 
-const SideBar = () => {
+const SideBar = ({ display }) => {
 	return (
 		<SideBarProvider>
 			<Stack
-				display={{ base: 'none', md: 'flex' }}
+				display={display}
 				gap='2'
 				pt='4'
 				pl='8'

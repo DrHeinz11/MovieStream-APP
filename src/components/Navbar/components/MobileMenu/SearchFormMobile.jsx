@@ -1,15 +1,15 @@
 import { chakra } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
 
 const SearchFormMobile = ({ setFocus }) => {
-	const [datos, setDatos] = useState({ value: '' });
+	const searchRef = useRef();
 	const handleSearchSubmit = event => {
 		event.preventDefault();
-		console.log(datos);
+		console.log(searchRef.current.value);
 		setTimeout(() => {
 			setFocus(prev => !prev);
-		}, 300);
+		}, 500);
 	};
 
 	return (
@@ -21,7 +21,7 @@ const SearchFormMobile = ({ setFocus }) => {
 			display='flex'
 			zIndex='1000'
 			gap='2'
-			onSubmit={ev => handleSearchSubmit(ev)}
+			onSubmit={handleSearchSubmit}
 		>
 			<chakra.button
 				display='flex'
@@ -31,7 +31,7 @@ const SearchFormMobile = ({ setFocus }) => {
 				bg='#f1f7ff'
 				boxSize='2.5rem'
 				type='submit'
-				onSubmit={ev => handleSearchSubmit(ev)}
+				onSubmit={handleSearchSubmit}
 			>
 				<BsSearch className='width' />
 			</chakra.button>
@@ -45,8 +45,7 @@ const SearchFormMobile = ({ setFocus }) => {
 				type='text'
 				placeholder='Search'
 				flex='1'
-				value={datos.value}
-				onChange={ev => setDatos({ value: ev.target.value })}
+				ref={searchRef}
 			/>
 		</chakra.form>
 	);

@@ -2,15 +2,13 @@ import { HStack } from '@chakra-ui/react';
 import { ButtonLogo } from '../Sidebar/components';
 import Form from '../SideSearchBar/Components/SearchForm';
 import CategoryHead from './components/CategoryHead';
-import HamburgerMenu from './components/HamburgerMenu';
-
+import MobileMenu from './components/MobileMenu/MobileMenu';
 const Navbar = () => {
 	return (
 		<HStack
 			py='4'
 			px='6'
 			w='full'
-			maxW='1250px'
 			margin='0 auto'
 			justify='space-between'
 			position='sticky'
@@ -21,7 +19,7 @@ const Navbar = () => {
 		>
 			<ButtonLogo />
 			<CategoryHead />
-			<HamburgerMenu />
+			<MobileMenu />
 			<Form display={{ base: 'none', md: 'flex' }} />
 		</HStack>
 	);

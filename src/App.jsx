@@ -17,7 +17,7 @@ function App() {
 					minH='100vh'
 					gridTemplateColumns={{ base: 'none', md: '.5fr 1.5fr .5fr' }}
 				>
-					<SideBar />
+					<SideBar display={{ base: 'none', md: 'flex' }} />
 					<Routes />
 					<Box display={{ base: 'none', md: 'flex' }} className=''></Box>
 				</Grid>{' '}

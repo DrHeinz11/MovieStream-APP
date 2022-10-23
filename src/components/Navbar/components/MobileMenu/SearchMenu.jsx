@@ -1,23 +1,22 @@
-import { Box } from '@chakra-ui/react';
+import { Grid } from '@chakra-ui/react';
 import { useState } from 'react';
 import FormMobile from './FormMobile';
 import SearchFormMobile from './SearchFormMobile';
-import { BsGridFill, BsX } from 'react-icons/bs';
+import { BsSearch, BsX } from 'react-icons/bs';
 
-const HamburgerMenu = () => {
+const SearchMenu = () => {
 	const [focus, setFocus] = useState(false);
 	return (
 		<>
-			<Box
-			display={{ base: 'content', md: 'none' }}
-				boxSize='2rem'
-				position='absolute'
-				top='4'
-				right='4'
+			<Grid
+				boxSize='3rem'
+				placeContent={'center'}
+				borderRadius='full'
+				bg='#f1f1f1'
 				onClick={() => setFocus(!focus)}
 			>
-				{!focus ? <BsGridFill /> : <BsX />}
-			</Box>
+				{!focus ? <BsSearch /> : <BsX />}
+			</Grid>
 			{focus && (
 				<FormMobile setFocus={setFocus}>
 					<SearchFormMobile setFocus={setFocus} />
@@ -27,4 +26,4 @@ const HamburgerMenu = () => {
 	);
 };
 
-export default HamburgerMenu;
+export default SearchMenu;
