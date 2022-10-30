@@ -1,15 +1,24 @@
 import Routes from './routes/Ruotes';
 import { BrowserRouter } from 'react-router-dom';
-import { Box, Divider, Grid } from '@chakra-ui/react';
+import { Divider, HStack, Stack } from '@chakra-ui/react';
 import SideBar from './components/Sidebar/SideBar';
 import Navbar from './components/Navbar/Navbar';
+import { SideBarProvider } from './components/Sidebar/context/context';
 function App() {
 	return (
 		<>
 			<BrowserRouter>
-				<Navbar />
+				<Stack>
+					<SideBarProvider>
+						<Navbar />
+						<HStack alignItems='flex-start' spacing={'none'}>
+							<SideBar display={{ base: 'none', md: 'flex' }} />
+							<Routes />
+						</HStack>
+					</SideBarProvider>
+				</Stack>
 				<Divider />
-				<Grid
+				{/* <Grid
 					w='full'
 					maxW='1350px'
 					margin='0 auto'
@@ -17,10 +26,8 @@ function App() {
 					minH='100vh'
 					gridTemplateColumns={{ base: 'none', md: '.5fr 1.5fr .5fr' }}
 				>
-					<SideBar display={{ base: 'none', md: 'flex' }} />
-					<Routes />
 					<Box display={{ base: 'none', md: 'flex' }} className=''></Box>
-				</Grid>{' '}
+				</Grid>{' '} */}
 			</BrowserRouter>
 		</>
 	);

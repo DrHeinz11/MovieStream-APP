@@ -13,7 +13,7 @@ const General = () => {
 				</HStack>
 				<HStack className='links' cursor='pointer' justify='flex-start'>
 					<BsBoxArrowLeft />
-					<Text textTransform='uppercase'>log out</Text>
+					<Text textTransform='uppercase'>log in</Text>
 				</HStack>
 			</Stack>
 		</Stack>

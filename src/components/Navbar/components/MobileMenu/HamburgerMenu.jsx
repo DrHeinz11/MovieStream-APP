@@ -2,7 +2,7 @@ import { Box } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { BsX } from 'react-icons/bs';
-import SideBar from '../../../Sidebar/SideBar';
+import HamburguerOption from './HamburguerOption';
 
 const HamburgerMenu = () => {
 	const [focus, setFocus] = useState(false);
@@ -36,7 +36,7 @@ const HamburgerMenu = () => {
 				width='full'
 				bg='blackAlpha.900'
 			>
-				<SideBar />
+				<HamburguerOption />
 			</Box>
 		</>
 	);

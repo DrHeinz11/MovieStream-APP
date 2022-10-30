@@ -15,7 +15,7 @@ const SeriesPage = () => {
 					nesciunt sapiente natus! Odit architecto enim neque ad. Repellendus,
 					culpa natus.
 				</Text>
-				<ButtonGroup>
+				<ButtonGroup flexWrap={'wrap'} gap='2' spacing='none'>
 					<Link to='/search/123456'>
 						<Button size='md' colorScheme={'purple'}>
 							Search

@@ -1,23 +1,23 @@
 import { Stack } from '@chakra-ui/react';
 import { Library, Menu, Category, General } from './components';
-import { SideBarProvider } from './context/context';
 
-const SideBar = ({ display }) => {
+const SideBar = ({ display, props }) => {
 	return (
-		<SideBarProvider>
-			<Stack
-				display={display}
-				gap='2'
-				pt='4'
-				pl='8'
-				borderInlineEnd='1px solid #c1c1c1'
-			>
-				<Menu />
-				<Library />
-				<Category />
-				<General />
-			</Stack>
-		</SideBarProvider>
+		<Stack
+			as='nav'
+			display={display}
+			gap='2'
+			pt='4'
+			pl='6'
+			w='325px'
+			borderInlineEnd='1px solid #c1c1c1'
+			{...props}
+		>
+			<Menu />
+			<Library />
+			<Category />
+			<General />
+		</Stack>
 	);
 };
 

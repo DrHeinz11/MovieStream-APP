@@ -1,9 +1,9 @@
 import { Grid, Heading, Image, Stack } from '@chakra-ui/react';
-import Card from '../components/Card/Card';
 
 const Home = () => {
 	return (
 		<Stack
+			as='section'
 			w='full'
 			px='10'
 			py='8'
@@ -26,12 +26,7 @@ const Home = () => {
 				gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
 				gap='2'
 				w='full'
-			>
-				<Card bgUrl='https://image.tmdb.org/t/p/w300/mWYW3xNeV2IM06aUl2xMUdLicpa.jpg' />
-				<Card bgUrl='https://image.tmdb.org/t/p/w300/mWYW3xNeV2IM06aUl2xMUdLicpa.jpg' />
-				<Card bgUrl='https://image.tmdb.org/t/p/w300/mWYW3xNeV2IM06aUl2xMUdLicpa.jpg' />
-				<Card bgUrl='https://image.tmdb.org/t/p/w300/mWYW3xNeV2IM06aUl2xMUdLicpa.jpg' />
-			</Grid>
+			></Grid>
 		</Stack>
 	);
 };

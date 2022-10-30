@@ -18,7 +18,7 @@ const Ruotes = () => {
 			<Route path='/series/:id' element={<SeriesPage />} />
 			<Route path='/series/all' element={<SeriesAll />} />
 			<Route path='/search/:id' element={<SearchAll />} />
-			<Route path='/recent/favorites' element={<RecentFavorites />} />
+			<Route path='/see-later/' element={<RecentFavorites />} />
 		</Routes>
 	);
 };
