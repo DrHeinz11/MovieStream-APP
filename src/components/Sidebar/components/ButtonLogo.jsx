@@ -10,7 +10,7 @@ const ButtonLogo = () => {
 		<Link to={'/'} onClick={HandleScrollToTop}>
 			<HStack
 				mr='2'
-				_onClick={() => setFocus({ value: 'home' })}
+				onClick={() => setFocus({ value: 'home' })}
 				_hover={{ opacity: 0.5 }}
 			>
 				<Heading
