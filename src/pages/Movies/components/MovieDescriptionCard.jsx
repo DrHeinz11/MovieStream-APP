@@ -12,7 +12,7 @@ const MovieDescriptionCard = ({
 	props: { genres, title, description, release, rating, image, uuid },
 }) => {
 	return (
-		<HStack flexWrap='wrap' gap='4' p='2'>
+		<HStack justifyContent='center' bg={'#fafafa'} flexWrap='wrap' gap='4' px='2' py='4'>
 			<Image borderRadius='sm' src={image} alt={uuid} />
 
 			<Stack gap='4' spacing='0' maxW='450px'>
