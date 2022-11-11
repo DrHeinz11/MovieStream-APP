@@ -4,7 +4,7 @@ export const seeLaterSlice = createSlice({
 	name: 'seeLater',
 	initialState,
 	reducers: {
-		addSeeLater: (state, action) => [...state,{...action.payload}],
+		addSeeLater: (state, action) => [...state, { ...action.payload }],
 		removeSeeLater: (state, action) => {
 			const result = state.filter(element => element.id !== action.payload.id);
 			return result;

@@ -1,11 +1,13 @@
-import { Button, Grid, Heading, Image, Stack } from '@chakra-ui/react'; 
+import { Button, Grid, Heading, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import Card from '../components/Card/Card';
 import { useGetMoviesQuery } from '../services/API.services';
+import Pagination from './Home/components/Pagination';
 
 const Home = () => {
 	const [albumQuery, setAlbumQuery] = useState(1);
 	const { data, isLoading } = useGetMoviesQuery(albumQuery);
+
 	return (
 		<Stack
 			as='section'
@@ -25,16 +27,7 @@ const Home = () => {
 				src='https://images4.alphacoders.com/573/57394.jpg'
 				alt='Background'
 			/>
-			<Heading>raro</Heading>
-			<Heading>todo</Heading>
-			<Heading>muy raro</Heading>
-
-			<Grid
-				gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
-				gap='2'
-				w='full'
-				alignItems='center'
-			>
+			<HStack>
 				<Button
 					size='lg'
 					_disabled={albumQuery <= 0 && 'disable'}
@@ -44,8 +37,21 @@ const Home = () => {
 					size='lg'
 					onClick={() => setAlbumQuery(prev => prev + 1)}
 				>{`NEXT>`}</Button>
+			</HStack>
+			<Grid
+				gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
+				gap='2'
+				w='full'
+				alignItems='center'
+			>
 				{isLoading ? (
-					<Heading>loading...</Heading>
+					<Spinner
+					thickness='5px'
+					speed='0.45s'
+					emptyColor='gray.200'
+					color='brand.main'
+					size='xl'
+				  />
 				) : (
 					data?.results.map(element => (
 						<Card
@@ -59,6 +65,7 @@ const Home = () => {
 					))
 				)}
 			</Grid>
+			<Pagination setAlbumQuery={setAlbumQuery} albumQuery={albumQuery} />
 		</Stack>
 	);
 };
