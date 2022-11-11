@@ -9,7 +9,8 @@ const SideBar = ({ display, props }) => {
 			gap='2'
 			pt='4'
 			pl='6'
-			w='325px'
+			minW='264px'
+			maxW='264px'
 			borderInlineEnd='1px solid #c1c1c1'
 			{...props}
 		>

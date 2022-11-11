@@ -16,4 +16,4 @@ export const movieSlice = createSlice({
 	},
 });
 
-export const {resolveMovie, resetMovie} = movieSlice.actions;
+export const { resolveMovie, resetMovie } = movieSlice.actions;
