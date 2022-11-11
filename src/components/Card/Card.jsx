@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Grid, Heading, Stack } from '@chakra-ui/react';
+import { Badge, Button, Grid, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addSeeLater, removeSeeLater } from '../../redux/SeeLater';
+import { HandleScrollToTop } from '../../utils/HandleScrollToTop';
 
 const Card = ({ bgUrl, title, id, year, rating }) => {
 	const [focus, setFocus] = useState(false);
@@ -63,18 +65,29 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 					<BsBookmarkPlus color='current' />
 				</Grid>
 			)}
-			<Stack>
-				<Badge colorScheme={'pink'} w='fit-content' size='sm'>
-					Año: {year}
-				</Badge>
-				<Badge colorScheme={'red'} w='fit-content' size='sm'>
-					Rating: {rating}
-				</Badge>
-				<Badge>{title}</Badge>
-			</Stack>
-			<Button colorScheme='red' borderRadius='xs'>
-				Watch Now
-			</Button>
+			<Link
+				onClick={() =>
+					HandleScrollToTop({
+						direction: 'top',
+						coordinate: 0,
+						behavior: 'auto',
+					})
+				}
+				to={`/movie/${id}`}
+			>
+				<Stack>
+					<Badge colorScheme={'pink'} w='fit-content' size='sm'>
+						Año: {year}
+					</Badge>
+					<Badge colorScheme={'red'} w='fit-content' size='sm'>
+						Rating: {rating}
+					</Badge>
+					<Badge>{title}</Badge>
+				</Stack>
+				<Button colorScheme='red' borderRadius='xs'>
+					Watch Now
+				</Button>
+			</Link>
 		</Stack>
 	);
 };

@@ -7,7 +7,7 @@ import { useSidebarContext } from '../context/context';
 const ButtonLogo = () => {
 	const { setFocus } = useSidebarContext();
 	return (
-		<Link to={'/'} onClick={HandleScrollToTop}>
+		<Link to={'/'} onClick={()=>HandleScrollToTop({direction:'top',coordinate:0,behavior:'smooth'})}>
 			<HStack
 				mr='2'
 				onClick={() => setFocus({ value: 'home' })}

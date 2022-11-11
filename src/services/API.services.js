@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-const API = 'https://movies-app1.p.rapidapi.com/api/movies';
+const API = 'https://movies-app1.p.rapidapi.com/api/';
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -22,15 +22,31 @@ export const Api = createApi({
 	}),
 	endpoints: builder => ({
 		getPhotos: builder.query({
-			query: albumId => `/albums/${albumId}/photos`,
+			query: albumId => `movies/albums/${albumId}/photos`,
 		}),
 		getAlbums: builder.query({
-			query: () => '/albums',
+			query: () => 'movies/albums',
 		}),
 		getMovies: builder.query({
-			query: page => `?page=${page}&limit=10&year=2020`,
+			query: page => `movies?page=${page}&limit=12&year=2020`,
+		}),
+		getSeriesAll: builder.query({
+			query: seriesAll => `movies?page=${seriesAll}&limit=20&type=series`,
+		}),
+		getSeriesById: builder.query({
+			query: seriesById => `episode/${seriesById}`,
+		}),
+		getMoviesById: builder.query({
+			query: movieById => `movie/${movieById}`,
 		}),
 	}),
 });
 
-export const { useGetPhotosQuery, useGetAlbumsQuery, useGetMoviesQuery } = Api;
+export const {
+	useGetPhotosQuery,
+	useGetAlbumsQuery,
+	useGetMoviesQuery,
+	useGetMoviesByIdQuery,
+	useGetSeriesAllQuery,
+	useGetSeriesByIdQuery,
+} = Api;

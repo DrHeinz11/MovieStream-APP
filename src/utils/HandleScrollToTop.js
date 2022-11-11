@@ -1,3 +1,3 @@
-export const HandleScrollToTop = () => {
-	window.scrollTo({ top: 0, behavior: 'smooth' });
+export const HandleScrollToTop = ({ direction, coordinate, behavior }) => {
+	window.scrollTo({ [direction]: coordinate, behavior: behavior });
 };

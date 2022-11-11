@@ -18,7 +18,10 @@ const Pagination = ({ setAlbumQuery, albumQuery }) => {
 					size='sm'
 					key={index}
 					variant={albumQuery === element ? 'solid' : 'outline'}
-					onClick={() => setAlbumQuery(element)}
+					onClick={() => {
+						setAlbumQuery(element);
+						window.scrollTo({ top: 350, behavior: 'smooth' });
+					}}
 				>
 					{element}
 				</Button>
@@ -30,20 +33,23 @@ const Pagination = ({ setAlbumQuery, albumQuery }) => {
 							<Button
 								display={albumQuery > 11 ? 'block' : 'none'}
 								size='sm'
-								variant='solid'
+								variant='outline'
 								onClick={() => setAlbumQuery(prev => prev - 1)}
 							>
 								{`<`}
 							</Button>
-							<Button size='sm' variant={albumQuery > 20 ? 'solid' : 'outline'}>
+							<Button size='sm' variant={albumQuery > 10 ? 'solid' : 'outline'}>
 								{albumQuery}
 							</Button>
 						</>
 					)}
 					<Button
 						size='sm'
-						variant={albumQuery === 10 ? 'ghost' : 'solid'}
-						onClick={() => setAlbumQuery(prev => prev + 1)}
+						variant={albumQuery === 10 ? 'ghost' : 'outline'}
+						onClick={() => {
+							setAlbumQuery(prev => prev + 1);
+							window.scrollTo({ top: 350, behavior: 'smooth' });
+						}}
 					>
 						{`>`}
 					</Button>

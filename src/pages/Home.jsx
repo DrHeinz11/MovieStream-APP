@@ -1,4 +1,4 @@
-import { Button, Grid, Heading, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
+import { Button, Grid, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import Card from '../components/Card/Card';
 import { useGetMoviesQuery } from '../services/API.services';
@@ -46,12 +46,12 @@ const Home = () => {
 			>
 				{isLoading ? (
 					<Spinner
-					thickness='5px'
-					speed='0.45s'
-					emptyColor='gray.200'
-					color='brand.main'
-					size='xl'
-				  />
+						thickness='5px'
+						speed='0.45s'
+						emptyColor='gray.200'
+						color='brand.main'
+						size='xl'
+					/>
 				) : (
 					data?.results.map(element => (
 						<Card
