@@ -4,7 +4,6 @@ import {
 	Spinner,
 	Stack,
 	chakra,
-	Box,
 	HStack,
 } from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
@@ -31,7 +30,7 @@ const SeriesAll = () => {
 			<Grid
 				w='full'
 				gap='4'
-				justifyContent={{base:'center',md:'flex-start'}}
+				justifyContent={{ base: 'center', md: 'flex-start' }}
 				gridTemplateColumns={{
 					base: 'repeat(auto-fill,minmax(250px,350px))',
 					sm: 'repeat(auto-fill,minmax(250px,300px))',

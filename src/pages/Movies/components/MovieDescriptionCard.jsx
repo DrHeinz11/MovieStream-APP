@@ -19,6 +19,7 @@ const MovieDescriptionCard = ({
 			gap='4'
 			px='2'
 			py='4'
+			w='full'
 		>
 			<Image borderRadius='sm' src={image} alt={uuid} />
 
@@ -48,7 +49,7 @@ const MovieDescriptionCard = ({
 						borderRadius='sm'
 						color='black'
 					>
-						★{' '}{rating}
+						★ {rating}
 					</Badge>
 				</Text>
 				<Badge

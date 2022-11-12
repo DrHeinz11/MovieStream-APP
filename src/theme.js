@@ -3,7 +3,6 @@ import { extendTheme } from '@chakra-ui/react';
 const colors = {
 	brand: {
 		100: '#e71c61',
-		
 	},
 	base: {
 		bg: '#082a3a',

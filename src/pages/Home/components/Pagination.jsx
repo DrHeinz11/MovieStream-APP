@@ -2,7 +2,13 @@ import { Button, ButtonGroup } from '@chakra-ui/react';
 import { useMemo } from 'react';
 import { HandlePaginationFill } from '../../../utils/HandlePaginationFill';
 
-const Pagination = ({ setAlbumQuery, albumQuery, colorScheme, amount,scrollTo }) => {
+const Pagination = ({
+	setAlbumQuery,
+	albumQuery,
+	colorScheme,
+	amount,
+	scrollTo,
+}) => {
 	const memorizedValue = useMemo(() => HandlePaginationFill(amount));
 	return (
 		<ButtonGroup
@@ -20,7 +26,10 @@ const Pagination = ({ setAlbumQuery, albumQuery, colorScheme, amount,scrollTo })
 					variant={albumQuery === element ? 'solid' : 'outline'}
 					onClick={() => {
 						setAlbumQuery(element);
-						window.scrollTo({ top: scrollTo.position, behavior: scrollTo.behavior });
+						window.scrollTo({
+							top: scrollTo.position,
+							behavior: scrollTo.behavior,
+						});
 					}}
 				>
 					{element}
@@ -37,7 +46,10 @@ const Pagination = ({ setAlbumQuery, albumQuery, colorScheme, amount,scrollTo })
 						>
 							{`<`}
 						</Button>
-						<Button size='sm' variant={albumQuery > memorizedValue.length ? 'solid' : 'outline'}>
+						<Button
+							size='sm'
+							variant={albumQuery > memorizedValue.length ? 'solid' : 'outline'}
+						>
 							{albumQuery}
 						</Button>
 					</>
