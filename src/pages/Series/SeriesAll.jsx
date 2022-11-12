@@ -1,5 +1,14 @@
-import { Grid, Spinner, Stack } from '@chakra-ui/react';
+import {
+	Grid,
+	Heading,
+	Spinner,
+	Stack,
+	chakra,
+	Box,
+	HStack,
+} from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
+import { BsCollectionPlayFill } from 'react-icons/bs';
 import { useGetSeriesAllQuery } from '../../services/API.services';
 import Pagination from '../Home/components/Pagination';
 import SeriesCard from './components/SeriesCard';
@@ -13,11 +22,20 @@ const SeriesAll = () => {
 	);
 	return (
 		<Stack spacing='0' gap='4' w='full' px='2'>
+			<HStack spacing='0' gap='4'>
+				<BsCollectionPlayFill />
+				<Heading display='flex' direction='row' alignItems='center' gap='2'>
+					Popular <chakra.span color='brand.100'>Series</chakra.span>
+				</Heading>
+			</HStack>
 			<Grid
 				w='full'
 				gap='4'
-				justifyContent={'center'}
-				gridTemplateColumns='repeat(auto-fill,minmax(250px,300px))'
+				justifyContent={{base:'center',md:'flex-start'}}
+				gridTemplateColumns={{
+					base: 'repeat(auto-fill,minmax(250px,350px))',
+					sm: 'repeat(auto-fill,minmax(250px,300px))',
+				}}
 			>
 				{isLoading ? (
 					<Spinner

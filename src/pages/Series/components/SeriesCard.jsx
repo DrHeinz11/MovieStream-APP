@@ -30,7 +30,7 @@ const SeriesCard = ({ bgUrl, bgAlt, title, id, year, rating, episodes }) => {
 			minHeight='sm'
 			borderRadius='sm'
 			backgroundSize={'cover'}
-			backgroundPosition='center'
+			backgroundPosition={{ base: 'auto', md: 'center' }}
 		>
 			{!focus ? (
 				<Grid

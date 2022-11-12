@@ -56,25 +56,30 @@ const Home = () => {
 						size='xl'
 					/>
 				) : (
-					data?.results.map(element => (
-						<Card
-							year={element.year}
-							key={element._id}
-							bgUrl={element.image}
-							id={element._id}
-							title={element.title}
-							rating={element.rating}
-						/>
-					))
+					data?.results.map(
+						element =>
+							element.rating !== 'N/A/10' && (
+								<Card
+									year={element.year}
+									key={element._id}
+									bgUrl={element.image}
+									id={element._id}
+									title={element.title}
+									rating={element.rating}
+								/>
+							)
+					)
 				)}
 			</Grid>
-			<Pagination
-				amount={pagination}
-				colorScheme='red'
-				setAlbumQuery={setAlbumQuery}
-				albumQuery={albumQuery}
-				scrollTo={{ position: 300, behavior: 'smooth' }}
-			/>
+			{!isLoading && (
+				<Pagination
+					amount={pagination}
+					colorScheme='red'
+					setAlbumQuery={setAlbumQuery}
+					albumQuery={albumQuery}
+					scrollTo={{ position: 300, behavior: 'smooth' }}
+				/>
+			)}
 		</Stack>
 	);
 };
