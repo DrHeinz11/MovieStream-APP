@@ -1,29 +1,32 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Grid, Stack } from '@chakra-ui/react';
+import { Badge, Button, Grid, HStack, Stack, Tag } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addSeeLater, removeSeeLater } from '../../redux/SeeLater';
-import { HandleScrollToTop } from '../../utils/HandleScrollToTop';
+import { addSeeLater, removeSeeLater } from '../../../redux/SeeLater';
+import { HandleScrollToTop } from '../../../utils/HandleScrollToTop';
 
-const Card = ({ bgUrl, title, id, year, rating }) => {
+const SeriesCard = ({ bgUrl, bgAlt, title, id, year, rating, episodes }) => {
 	const [focus, setFocus] = useState(false);
 
 	const dispatcher = useDispatch();
 	const handleClick = () => {
-		dispatcher(addSeeLater({ name: title, id, status: true }));
+		dispatcher(addSeeLater({ name: title, id, status: true, type: 'series' }));
 		setFocus(prev => !prev);
 	};
 	const handleClickRemove = () => {
 		setFocus(prev => !prev);
-		dispatcher(removeSeeLater({ name: title, id, status: true }));
+		dispatcher(
+			removeSeeLater({ name: title, id, status: true, type: 'series' })
+		);
 	};
 	return (
 		<Stack
 			position='relative'
 			justifyContent={'end'}
 			backgroundImage={`url(${bgUrl})`}
+			alt={bgAlt}
 			minHeight='sm'
 			borderRadius='sm'
 			backgroundSize={'cover'}
@@ -72,29 +75,49 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 						behavior: 'auto',
 					})
 				}
-				to={`/movie/${id}`}
+				to={`/series/${id}`}
 			>
-				<Stack px='4' pb='4' pt='32' spacing='0' gap='2'>
+				<Stack
+					px='4'
+					pb='4'
+					pt='32'
+					spacing='0'
+					gap='2'
+					height={'23rem'}
+					justifyContent='flex-end'
+				>
 					<Badge
 						boxShadow={'md'}
 						w='fit-content'
 						whiteSpace={'normal'}
-						fontSize='md'
+						fontSize='lg'
 					>
 						{title}
 					</Badge>
-					<Badge
+					<Tag
 						boxShadow={'md'}
-						colorScheme={'pink'}
+						borderRadius='sm'
+						colorScheme={'green'}
 						w='fit-content'
-						size='sm'
+						size='md'
 					>
-						Año: {year}
-					</Badge>
-					<Badge boxShadow={'md'} w='fit-content' size='sm'>
-						Rating: {rating}
-					</Badge>
-					<Button boxShadow={'md'} colorScheme='red' borderRadius='sm'>
+						Episodes: {episodes.length}
+					</Tag>
+					<HStack spacing='0' gap='4'>
+						{' '}
+						<Badge boxShadow={'md'} w='fit-content' size='sm'>
+							Rating: {rating}
+						</Badge>
+						<Badge
+							boxShadow={'md'}
+							colorScheme={'green'}
+							w='fit-content'
+							size='sm'
+						>
+							Year: {year}
+						</Badge>
+					</HStack>
+					<Button boxShadow={'md'} colorScheme='green' borderRadius='sm'>
 						Watch Now
 					</Button>
 				</Stack>
@@ -103,4 +126,4 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 	);
 };
 
-export default Card;
+export default SeriesCard;

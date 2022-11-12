@@ -16,7 +16,7 @@ const CustomFavorites = () => {
 			align={'center'}
 			justify='center'
 			boxSize={'48px'}
-			color={favorites ? 'brand.main' : '#fff'}
+			color={favorites ? 'brand.100' : '#fff'}
 			sx={{
 				background: 'rgba(255, 255, 255, 0.21)',
 				backdropFilter: ' blur(11.4px)',

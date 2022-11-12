@@ -4,12 +4,12 @@ const SeriesPage = () => {
 	const { id } = useParams();
 	return (
 		<>
-			<Box w='full' bg='brand.bg' p={4}>
-				<Heading color='brand.main'>SeriesPage</Heading>
-				<Heading color='brand.sub' textTransform={'uppercase'}>
+			<Box w='full' bg='base.bg' p={4}>
+				<Heading color='brand.100'>SeriesPage</Heading>
+				<Heading color='base.sub' textTransform={'uppercase'}>
 					{id}
 				</Heading>
-				<Text color='brand.text'>
+				<Text color='base.text'>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quaerat
 					nam debitis animi libero sed quisquam, doloribus quae exercitationem
 					nesciunt sapiente natus! Odit architecto enim neque ad. Repellendus,

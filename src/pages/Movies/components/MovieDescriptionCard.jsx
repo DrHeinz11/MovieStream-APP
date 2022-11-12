@@ -12,11 +12,18 @@ const MovieDescriptionCard = ({
 	props: { genres, title, description, release, rating, image, uuid },
 }) => {
 	return (
-		<HStack justifyContent='center' bg={'#fafafa'} flexWrap='wrap' gap='4' px='2' py='4'>
+		<HStack
+			justifyContent='center'
+			bg={'#fafafa'}
+			flexWrap='wrap'
+			gap='4'
+			px='2'
+			py='4'
+		>
 			<Image borderRadius='sm' src={image} alt={uuid} />
 
 			<Stack gap='4' spacing='0' maxW='450px'>
-				<Box>
+				<HStack spacing='0' gap='2'>
 					{genres?.map(element => (
 						<Badge
 							variant={'subtle'}
@@ -27,12 +34,23 @@ const MovieDescriptionCard = ({
 							{element.name}
 						</Badge>
 					))}
-				</Box>
+				</HStack>
 				<Box>
 					<Heading>{title}</Heading>
 					<Text>{description}</Text>
 				</Box>
-				<Text>Rating:{rating}</Text>
+				<Text>
+					Rating:{'  '}
+					<Badge
+						w='fit-content'
+						variant={'subtle'}
+						fontSize='sm'
+						borderRadius='sm'
+						color='black'
+					>
+						★{' '}{rating}
+					</Badge>
+				</Text>
 				<Badge
 					w='fit-content'
 					variant={'subtle'}

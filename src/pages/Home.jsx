@@ -1,5 +1,5 @@
 import { Button, Grid, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import Card from '../components/Card/Card';
 import { useGetMoviesQuery } from '../services/API.services';
 import Pagination from './Home/components/Pagination';
@@ -7,7 +7,10 @@ import Pagination from './Home/components/Pagination';
 const Home = () => {
 	const [albumQuery, setAlbumQuery] = useState(1);
 	const { data, isLoading } = useGetMoviesQuery(albumQuery);
-
+	const pagination = useMemo(
+		() => (data?.total_pages >= 10 ? 10 : data?.total_pages),
+		[data?.total_pages]
+	);
 	return (
 		<Stack
 			as='section'
@@ -49,7 +52,7 @@ const Home = () => {
 						thickness='5px'
 						speed='0.45s'
 						emptyColor='gray.200'
-						color='brand.main'
+						color='brand.100'
 						size='xl'
 					/>
 				) : (
@@ -65,7 +68,13 @@ const Home = () => {
 					))
 				)}
 			</Grid>
-			<Pagination setAlbumQuery={setAlbumQuery} albumQuery={albumQuery} />
+			<Pagination
+				amount={pagination}
+				colorScheme='red'
+				setAlbumQuery={setAlbumQuery}
+				albumQuery={albumQuery}
+				scrollTo={{ position: 300, behavior: 'smooth' }}
+			/>
 		</Stack>
 	);
 };

@@ -28,7 +28,8 @@ export const Api = createApi({
 			query: () => 'movies/albums',
 		}),
 		getMovies: builder.query({
-			query: page => `movies?page=${page}&limit=12&year=2020`,
+			query: page => `
+			movies?page=${page}&sort=rating&type=movies&year=2021`,
 		}),
 		getSeriesAll: builder.query({
 			query: seriesAll => `movies?page=${seriesAll}&limit=20&type=series`,
