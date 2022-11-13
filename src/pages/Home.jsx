@@ -1,4 +1,4 @@
-import { Button, Grid, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
+import { Grid, Stack } from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
 import Card from '../components/Card/Card';
 import Loader from '../components/Loader/Loader';
@@ -17,43 +17,23 @@ const Home = () => {
 			as='section'
 			w='full'
 			maxW={'1000px'}
-			px='10'
+			px={{ base: 4, md: 10 }}
 			py='8'
 			gap='4'
 			minH='100vh'
 			borderInlineEnd='1px solid #c1c1c1'
 		>
-			{' '}
-			<Image
-				w='full'
-				h='2xs'
-				objectFit={'cover'}
-				objectPosition='0 -100px'
-				src='https://images4.alphacoders.com/573/57394.jpg'
-				alt='Background'
-			/>
 			{isLoading ? (
 				<Loader />
 			) : (
 				<>
-					{/* <HStack>
-						<Button
-							size='lg'
-							_disabled={albumQuery <= 0 && 'disable'}
-							onClick={() => setAlbumQuery(prev => prev >= 0 && prev - 1)}
-						>{`<PREV`}</Button>
-						<Button
-							size='lg'
-							onClick={() => setAlbumQuery(prev => prev + 1)}
-						>{`NEXT>`}</Button>
-					</HStack> */}
 					<Pagination
 						amount={pagination}
 						totalPages={data?.total_pages}
 						colorScheme='red'
 						setAlbumQuery={setAlbumQuery}
 						albumQuery={albumQuery}
-						scrollTo={{ position: 300, behavior: 'smooth' }}
+						scrollTo={{ position: 200, behavior: 'smooth' }}
 					/>
 					<Grid
 						gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'

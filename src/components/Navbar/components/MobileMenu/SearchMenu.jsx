@@ -1,5 +1,5 @@
 import { Grid } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import FormMobile from './FormMobile';
 import SearchFormMobile from './SearchFormMobile';
 import { BsSearch, BsX } from 'react-icons/bs';
@@ -19,7 +19,7 @@ const SearchMenu = () => {
 			</Grid>
 			{focus && (
 				<FormMobile setFocus={setFocus}>
-					<SearchFormMobile setFocus={setFocus} setDataSearch={setDataSearch} />
+					<SearchFormMobile setFocus={setFocus} />
 				</FormMobile>
 			)}
 		</>

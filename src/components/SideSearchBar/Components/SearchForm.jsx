@@ -1,12 +1,14 @@
 import { chakra } from '@chakra-ui/react';
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { BsSearch } from 'react-icons/bs';
 const SearchForm = ({ display }) => {
 	const searchRef = useRef();
-
+	const navigate = useNavigate();
 	const handleSearchSubmit = event => {
 		event.preventDefault();
-		console.log(searchRef.current.value);
+		const dataHash = searchRef.current.value.split(' ').join('-');
+		navigate(`/search/${dataHash}`);
 	};
 
 	return (

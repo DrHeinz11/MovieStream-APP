@@ -18,16 +18,6 @@ function App() {
 					</SideBarProvider>
 				</Stack>
 				<Divider />
-				{/* <Grid
-					w='full'
-					maxW='1350px'
-					margin='0 auto'
-					bg='#fff'
-					minH='100vh'
-					gridTemplateColumns={{ base: 'none', md: '.5fr 1.5fr .5fr' }}
-				>
-					<Box display={{ base: 'none', md: 'flex' }} className=''></Box>
-				</Grid>{' '} */}
 			</BrowserRouter>
 		</>
 	);

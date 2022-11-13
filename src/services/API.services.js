@@ -44,6 +44,9 @@ export const Api = createApi({
 		getMoviesById: builder.query({
 			query: movieById => `movie/${movieById}`,
 		}),
+		getByGenre: builder.query({
+			query: page => `movies?page=${page}&limit=20&genres=animacion`,
+		}),
 	}),
 });
 
@@ -54,5 +57,6 @@ export const {
 	useGetMoviesByIdQuery,
 	useGetSeriesAllQuery,
 	useGetSeriesByIdQuery,
-	useGetMoviesByTitleQuery
+	useGetMoviesByTitleQuery,
+	useGetByGenreQuery,
 } = Api;

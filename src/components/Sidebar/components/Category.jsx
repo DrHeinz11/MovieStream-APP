@@ -18,7 +18,7 @@ const Category = () => {
 				<CustomOption route='/movie/all' title='Movie'>
 					<BsCameraReelsFill />
 				</CustomOption>
-				<CustomOption route='/series/anime' title='anime'>
+				<CustomOption route='/genre/animacion' title='anime'>
 					<BsFillPuzzleFill />
 				</CustomOption>
 			</Stack>

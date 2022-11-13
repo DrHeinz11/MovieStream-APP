@@ -7,6 +7,7 @@ import {
 	MoviePage,
 	SearchAll,
 	RecentFavorites,
+	GenrePage
 } from '../pages/index';
 
 const Ruotes = () => {
@@ -16,6 +17,7 @@ const Ruotes = () => {
 			<Route path='/movie/all' element={<MovieAll />} />
 			<Route path='/movie/:id' element={<MoviePage />} />
 			<Route path='/series/:id' element={<SeriesPage />} />
+			<Route path='/genre/:id' element={<GenrePage />} />
 			<Route path='/series/all' element={<SeriesAll />} />
 			<Route path='/search/:id' element={<SearchAll />} />
 			<Route path='/see-later/' element={<RecentFavorites />} />
