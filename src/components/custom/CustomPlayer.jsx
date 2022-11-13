@@ -3,26 +3,15 @@ import { chakra } from '@chakra-ui/react';
 const CustomPlayer = () => {
 	return (
 		<chakra.svg
-			maxW='450px'
-            w='full'
-			height='250px'
-			viewBox='0 0 450 250'
+			width={{ base: '34.5px', md: '54.5px' }}
+			height={{ base: '40px', md: '50px' }}
+			viewBox='0 0 69 80'
 			fill='none'
 			xmlns='http://www.w3.org/2000/svg'
-			boxShadow={'md'}
 		>
-			<rect
-				x='0.5'
-				y='0.5'
-				width='449'
-				height='249'
-				rx='4.5'
-				fill='#FAFAFA'
-				stroke='#CCCCCC'
-			/>
 			<chakra.path
 				_hover={{ fill: '#C2002D' }}
-				d='M259 125L208 154.445L208 95.5551L259 125Z'
+				d='M69 40L3.87733e-06 79.8372L7.36001e-06 0.162827L69 40Z'
 				fill='#EA2250'
 			/>
 		</chakra.svg>

@@ -1,12 +1,15 @@
 import { chakra } from '@chakra-ui/react';
 import { useRef } from 'react';
 import { BsSearch } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
-const SearchFormMobile = ({ setFocus }) => {
+const SearchFormMobile = ({ setFocus, setDataSearch }) => {
 	const searchRef = useRef();
+	const navigate = useNavigate();
 	const handleSearchSubmit = event => {
 		event.preventDefault();
-		console.log(searchRef.current.value);
+		const dataHash = searchRef.current.value.split(' ').join('-');
+		navigate(`/search/${dataHash}`);
 		setTimeout(() => {
 			setFocus(prev => !prev);
 		}, 500);

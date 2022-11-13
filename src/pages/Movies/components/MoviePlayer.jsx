@@ -1,47 +1,54 @@
-import { Box, Button, ButtonGroup, Stack, Tag, chakra } from '@chakra-ui/react';
+import { Box, Stack, chakra } from '@chakra-ui/react';
 import { useState } from 'react';
-import ReactPlayer from 'react-player';
 import CustomPlayer from '../../../components/custom/CustomPlayer';
+import MovieEmbedServers from './MovieEmbedServers';
 
-const MoviePlayer = ({ embedUrls }) => {
+const MoviePlayer = ({ embedUrls, bgUrl }) => {
 	const [serving, setServing] = useState(() => embedUrls[0]);
 	console.log(serving);
 	return (
 		<Stack spacing='0' gap='4' alignItems='center' px='4'>
-			{/* <ReactPlayer url={[serving]} /> */}
 			<chakra.a
-				position='relative'
 				rel='noopener noreferrer'
 				target='_blank'
 				w='fit-content'
 				maxW='100%'
 				href={serving.url}
+				borderRadius='md'
 			>
-				<chakra.span
-					position='absolute'
-					top='1rem'
-					left={'11rem'}
-					color='brand.100'
-					textTransform='capitalize'
+				<Box
+					backgroundImage={`url('${bgUrl}')`}
+					backgroundPosition='center'
+					backgroundRepeat='no-repeat'
+					backgroundSize='cover'
+					borderRadius='md'
 				>
-					{serving.server} player.
-				</chakra.span>
-				<CustomPlayer />
+					<Stack
+						py='10'
+						borderRadius='md'
+						px='20'
+						spacing='0'
+						gap='4'
+						align='center'
+						bg='blackAlpha.800'
+					>
+						<chakra.span color='white' fontSize='lg' textTransform='capitalize'>
+							{serving.server} player.
+						</chakra.span>
+						<CustomPlayer />
+						<chakra.span color='white' fontSize='md'>
+							It is advisable to have an adbloker
+						</chakra.span>
+					</Stack>
+				</Box>
 			</chakra.a>
-			<Tag>Servers:</Tag>
-			<ButtonGroup>
-				{embedUrls?.map(
-					element =>
-						element.priority > 0 && (
-							<Button
-								key={element.server}
-								onClick={() => setServing(element)}
-							>
-								{element.server}
-							</Button>
-						)
-				)}
-			</ButtonGroup>
+			{embedUrls && (
+				<MovieEmbedServers
+					serving={serving}
+					setServing={setServing}
+					embedUrls={embedUrls}
+				/>
+			)}
 		</Stack>
 	);
 };

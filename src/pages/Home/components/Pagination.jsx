@@ -8,6 +8,7 @@ const Pagination = ({
 	colorScheme,
 	amount,
 	scrollTo,
+	totalPages,
 }) => {
 	const memorizedValue = useMemo(() => HandlePaginationFill(amount));
 	return (
@@ -55,16 +56,31 @@ const Pagination = ({
 					</>
 				)}
 			</>
-			<Button
-				size='sm'
-				variant={'outline'}
-				onClick={() => {
-					setAlbumQuery(prev => prev + 1);
-					window.scrollTo({ top: 350, behavior: 'smooth' });
-				}}
-			>
-				{`>`}
-			</Button>
+			{albumQuery < totalPages && (
+				<Button
+					size='sm'
+					variant={'outline'}
+					onClick={() => {
+						setAlbumQuery(prev => prev + 1);
+						window.scrollTo({ top: 350, behavior: 'smooth' });
+					}}
+				>
+					{`>`}
+				</Button>
+			)}
+			{albumQuery < totalPages && (
+				<Button
+					size='sm'
+					variant={'ghost'}
+					_disabled='true'
+					onClick={() => {
+						setAlbumQuery(prev => totalPages);
+						window.scrollTo({ top: 350, behavior: 'smooth' });
+					}}
+				>
+					{totalPages}...
+				</Button>
+			)}
 		</ButtonGroup>
 	);
 };

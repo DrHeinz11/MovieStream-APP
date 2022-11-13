@@ -1,6 +1,7 @@
 import { Button, Grid, HStack, Image, Spinner, Stack } from '@chakra-ui/react';
 import { useMemo, useState } from 'react';
 import Card from '../components/Card/Card';
+import Loader from '../components/Loader/Loader';
 import { useGetMoviesQuery } from '../services/API.services';
 import Pagination from './Home/components/Pagination';
 
@@ -22,6 +23,7 @@ const Home = () => {
 			minH='100vh'
 			borderInlineEnd='1px solid #c1c1c1'
 		>
+			{' '}
 			<Image
 				w='full'
 				h='2xs'
@@ -30,55 +32,58 @@ const Home = () => {
 				src='https://images4.alphacoders.com/573/57394.jpg'
 				alt='Background'
 			/>
-			<HStack>
-				<Button
-					size='lg'
-					_disabled={albumQuery <= 0 && 'disable'}
-					onClick={() => setAlbumQuery(prev => prev >= 0 && prev - 1)}
-				>{`<PREV`}</Button>
-				<Button
-					size='lg'
-					onClick={() => setAlbumQuery(prev => prev + 1)}
-				>{`NEXT>`}</Button>
-			</HStack>
-			<Grid
-				gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
-				gap='2'
-				w='full'
-				alignItems='center'
-			>
-				{isLoading ? (
-					<Spinner
-						thickness='5px'
-						speed='0.45s'
-						emptyColor='gray.200'
-						color='brand.100'
-						size='xl'
+			{isLoading ? (
+				<Loader />
+			) : (
+				<>
+					{/* <HStack>
+						<Button
+							size='lg'
+							_disabled={albumQuery <= 0 && 'disable'}
+							onClick={() => setAlbumQuery(prev => prev >= 0 && prev - 1)}
+						>{`<PREV`}</Button>
+						<Button
+							size='lg'
+							onClick={() => setAlbumQuery(prev => prev + 1)}
+						>{`NEXT>`}</Button>
+					</HStack> */}
+					<Pagination
+						amount={pagination}
+						totalPages={data?.total_pages}
+						colorScheme='red'
+						setAlbumQuery={setAlbumQuery}
+						albumQuery={albumQuery}
+						scrollTo={{ position: 300, behavior: 'smooth' }}
 					/>
-				) : (
-					data?.results.map(
-						element =>
-							element.rating !== 'N/A/10' && (
-								<Card
-									year={element.year}
-									key={element._id}
-									bgUrl={element.image}
-									id={element._id}
-									title={element.title}
-									rating={element.rating}
-								/>
-							)
-					)
-				)}
-			</Grid>
-			{!isLoading && (
-				<Pagination
-					amount={pagination}
-					colorScheme='red'
-					setAlbumQuery={setAlbumQuery}
-					albumQuery={albumQuery}
-					scrollTo={{ position: 300, behavior: 'smooth' }}
-				/>
+					<Grid
+						gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
+						gap='2'
+						w='full'
+						alignItems='center'
+					>
+						{data?.results.map(
+							element =>
+								element.rating !== 'N/A/10' && (
+									<Card
+										year={element.year}
+										key={element._id}
+										bgUrl={element.image}
+										id={element._id}
+										title={element.title}
+										rating={element.rating}
+									/>
+								)
+						)}
+					</Grid>
+					<Pagination
+						amount={pagination}
+						totalPages={data?.total_pages}
+						colorScheme='red'
+						setAlbumQuery={setAlbumQuery}
+						albumQuery={albumQuery}
+						scrollTo={{ position: 300, behavior: 'smooth' }}
+					/>
+				</>
 			)}
 		</Stack>
 	);

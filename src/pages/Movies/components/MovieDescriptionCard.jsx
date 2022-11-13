@@ -14,17 +14,17 @@ const MovieDescriptionCard = ({
 	return (
 		<HStack
 			justifyContent='center'
-			bg={'#fafafa'}
 			flexWrap='wrap'
 			gap='4'
 			px='2'
 			py='4'
 			w='full'
+			spacing='0'
 		>
 			<Image borderRadius='sm' src={image} alt={uuid} />
 
 			<Stack gap='4' spacing='0' maxW='450px'>
-				<HStack spacing='0' gap='2'>
+				<HStack flexWrap='wrap' spacing='0' gap='2'>
 					{genres?.map(element => (
 						<Badge
 							variant={'subtle'}

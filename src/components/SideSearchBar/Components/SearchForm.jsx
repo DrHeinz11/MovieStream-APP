@@ -8,6 +8,7 @@ const SearchForm = ({ display }) => {
 		event.preventDefault();
 		console.log(searchRef.current.value);
 	};
+
 	return (
 		<chakra.form
 			bg='#f1f7ff'
