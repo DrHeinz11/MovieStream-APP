@@ -9,7 +9,7 @@ import Card from '../../components/Card/Card';
 import { useMemo, useState } from 'react';
 const GenrePage = () => {
 	const { id } = useParams();
-	const [albumQuery, setAlbumQuery] = useState('1');
+	const [albumQuery, setAlbumQuery] = useState(1);
 	const { data, isLoading } = useGetByGenreQuery(albumQuery);
 	const pagination = useMemo(
 		() => (data?.total_pages >= 10 ? 10 : data?.total_pages),
@@ -42,7 +42,7 @@ const GenrePage = () => {
 						<Pagination
 							amount={pagination}
 							totalPages={data?.total_pages}
-							colorScheme='red'
+							colorScheme='blue'
 							setAlbumQuery={setAlbumQuery}
 							albumQuery={albumQuery}
 							scrollTo={{ position: 300, behavior: 'smooth' }}

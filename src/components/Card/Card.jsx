@@ -28,6 +28,8 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 			borderRadius='sm'
 			backgroundSize={'cover'}
 			backgroundPosition='center'
+			boxShadow={'md'}
+			_hover={{transform:'scale(1.025)'}}
 		>
 			{!focus ? (
 				<Grid
