@@ -13,7 +13,6 @@ import { Link } from 'react-router-dom';
 
 const RecentFavorites = () => {
 	const state = useSelector(store => store.seeLater);
-	console.log(state);
 	return (
 		<Box w='full' px='4' py='10'>
 			<Grid gridTemplateColumns='repeat(auto-fill,minmax(250px,1fr))' w='full'>

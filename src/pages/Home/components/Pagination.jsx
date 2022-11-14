@@ -73,7 +73,6 @@ const Pagination = ({
 				<Button
 					size='sm'
 					variant={'ghost'}
-					_disabled='true'
 					onClick={() => {
 						setAlbumQuery(prev => totalPages);
 						window.scrollTo({ top: 350, behavior: 'smooth' });
