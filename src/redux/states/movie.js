@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const movieEmptyState = {
 	movie: '',
 	id: '',
+	bg: '',
 };
 
 export const movieSlice = createSlice({

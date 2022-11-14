@@ -2,10 +2,10 @@ import { Box, Stack, chakra } from '@chakra-ui/react';
 import { useState } from 'react';
 import CustomPlayer from '../../../components/custom/CustomPlayer';
 import MovieEmbedServers from './MovieEmbedServers';
+import grainSvg from '../../../assets/grain.svg';
 
-const MoviePlayer = ({ embedUrls, bgUrl }) => {
+const MoviePlayer = ({ embedUrls, bgUrl = grainSvg }) => {
 	const [serving, setServing] = useState(() => embedUrls[0]);
-	console.log(serving);
 	return (
 		<Stack spacing='0' gap='4' alignItems='center' px='4'>
 			<chakra.a

@@ -12,12 +12,12 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 
 	const dispatcher = useDispatch();
 	const handleClick = () => {
-		dispatcher(addSeeLater({ name: title, id, status: true }));
+		dispatcher(addSeeLater({ name: title, id, status: true, bgUrl: bgUrl }));
 		setFocus(prev => !prev);
 	};
 	const handleClickRemove = () => {
 		setFocus(prev => !prev);
-		dispatcher(removeSeeLater({ name: title, id, status: true }));
+		dispatcher(removeSeeLater({ name: title, id, status: true, bgUrl: bgUrl }));
 	};
 	return (
 		<Stack
@@ -29,7 +29,7 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 			backgroundSize={'cover'}
 			backgroundPosition='center'
 			boxShadow={'md'}
-			_hover={{transform:'scale(1.025)'}}
+			_hover={{ transform: 'scale(1.025)' }}
 		>
 			{!focus ? (
 				<Grid
