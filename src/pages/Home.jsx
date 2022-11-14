@@ -31,7 +31,7 @@ const Home = () => {
 						colorScheme='red'
 						setAlbumQuery={setAlbumQuery}
 						albumQuery={albumQuery}
-						scrollTo={{ position: 200, behavior: 'smooth' }}
+						scrollTo={{ position: 100, behavior: 'smooth' }}
 					/>
 					<Grid
 						gridTemplateColumns={{
@@ -62,7 +62,7 @@ const Home = () => {
 						colorScheme='red'
 						setAlbumQuery={setAlbumQuery}
 						albumQuery={albumQuery}
-						scrollTo={{ position: 300, behavior: 'smooth' }}
+						scrollTo={{ position: 0, behavior: 'smooth' }}
 					/>
 				</>
 			)}

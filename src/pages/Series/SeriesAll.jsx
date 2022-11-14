@@ -31,7 +31,8 @@ const SeriesAll = () => {
 						justifyContent={{ base: 'center', md: 'flex-start' }}
 						gridTemplateColumns={{
 							base: 'repeat(auto-fill,minmax(250px,350px))',
-							sm: 'repeat(auto-fill,minmax(250px,1fr))',
+							sm: 'repeat(auto-fill,minmax(220px,1fr))',
+							'2xl': 'repeat(auto-fill,minmax(300px,1fr))',
 						}}
 					>
 						{data?.results.map(element => (

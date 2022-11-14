@@ -63,7 +63,10 @@ const Pagination = ({
 					variant={'outline'}
 					onClick={() => {
 						setAlbumQuery(prev => prev + 1);
-						window.scrollTo({ top: 350, behavior: 'smooth' });
+						window.scrollTo({
+							top: scrollTo.position,
+							behavior: scrollTo.behavior,
+						});
 					}}
 				>
 					{`>`}
@@ -75,7 +78,10 @@ const Pagination = ({
 					variant={'ghost'}
 					onClick={() => {
 						setAlbumQuery(prev => totalPages);
-						window.scrollTo({ top: 350, behavior: 'smooth' });
+						window.scrollTo({
+							top: scrollTo.position,
+							behavior: scrollTo.behavior,
+						});
 					}}
 				>
 					{totalPages}...
