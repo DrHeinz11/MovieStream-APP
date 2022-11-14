@@ -17,20 +17,8 @@ const Menu = () => {
 					<BsHouseDoorFill />
 				</CustomOption>
 
-				<CustomOption route='/community' title='community'>
-					<BsShieldFillPlus />
-				</CustomOption>
-
-				<CustomOption route='/award' title='award'>
-					<BsFillAwardFill />
-				</CustomOption>
-
 				<CustomOption route='/discover' title='discover'>
 					<BsFillCompassFill />
-				</CustomOption>
-
-				<CustomOption route='/celebs' title='celebs'>
-					<BsFillPersonFill />
 				</CustomOption>
 			</Stack>
 		</Stack>

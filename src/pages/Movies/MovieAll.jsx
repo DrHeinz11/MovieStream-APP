@@ -21,9 +21,11 @@ const MovieAll = () => {
 		<Stack overflowX='hidden' py='10' px='4' spacing='0' gap='4'>
 			<Stack gap='4' spacing='0'>
 				<Heading>Categorias</Heading>
-				<SliderContainer>
-					<MovieGenre setFilter={setFilter} />
-				</SliderContainer>
+				{!isLoadingSearch && (
+					<SliderContainer>
+						<MovieGenre setFilter={setFilter} />
+					</SliderContainer>
+				)}
 			</Stack>
 
 			{search?.results.length > 0 && (

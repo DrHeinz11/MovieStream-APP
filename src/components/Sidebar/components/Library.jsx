@@ -15,9 +15,6 @@ const Library = () => {
 				<CustomOption route='/top-rated' title='Top rated'>
 					<BsFillStarFill />
 				</CustomOption>
-				<CustomOption route='/download' title='Downloaded'>
-					<BsCloudDownloadFill />
-				</CustomOption>
 			</Stack>
 		</Stack>
 	);
