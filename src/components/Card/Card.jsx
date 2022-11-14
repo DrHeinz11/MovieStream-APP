@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Grid, Stack } from '@chakra-ui/react';
+import { Badge, Button, Grid, Stack, chakra } from '@chakra-ui/react';
 import { useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { addSeeLater, removeSeeLater } from '../../redux/SeeLater';
 import { HandleScrollToTop } from '../../utils/HandleScrollToTop';
 
-const Card = ({ bgUrl, title, id, year, rating }) => {
+const Card = ({ bgUrl, title, id, year, rating, width = 'auto' }) => {
 	const [focus, setFocus] = useState(false);
 
 	const dispatcher = useDispatch();
@@ -29,6 +29,7 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 			backgroundSize={'cover'}
 			backgroundPosition='center'
 			boxShadow={'md'}
+			width={width}
 			_hover={{ transform: 'scale(1.025)' }}
 		>
 			{!focus ? (
@@ -94,7 +95,8 @@ const Card = ({ bgUrl, title, id, year, rating }) => {
 						Año: {year}
 					</Badge>
 					<Badge boxShadow={'md'} w='fit-content' size='sm'>
-						Rating: {rating}
+						Rating: <chakra.span color='#bf930d'>★</chakra.span>
+						{rating}
 					</Badge>
 					<Button boxShadow={'md'} colorScheme='red' borderRadius='sm'>
 						Watch Now

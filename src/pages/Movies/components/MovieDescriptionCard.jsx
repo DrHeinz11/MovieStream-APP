@@ -2,7 +2,7 @@ import {
 	Stack,
 	Heading,
 	Text,
-	Button,
+	chakra,
 	Box,
 	Badge,
 	HStack,
@@ -49,7 +49,7 @@ const MovieDescriptionCard = ({
 						borderRadius='sm'
 						color='black'
 					>
-						★ {rating}
+						<chakra.span color='#bf930d'>★</chakra.span> {rating}
 					</Badge>
 				</Text>
 				<Badge
@@ -60,9 +60,6 @@ const MovieDescriptionCard = ({
 				>
 					Release: {release}
 				</Badge>
-				<Button variant='solid' size='sm' colorScheme='red'>
-					CTA
-				</Button>
 			</Stack>
 		</HStack>
 	);

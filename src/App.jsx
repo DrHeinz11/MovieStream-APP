@@ -11,7 +11,11 @@ function App() {
 				<Stack>
 					<SideBarProvider>
 						<Navbar />
-						<HStack alignItems='flex-start' spacing={'none'} borderTop='1px solid #ccc'>
+						<HStack
+							alignItems='flex-start'
+							spacing={'none'}
+							borderTop='1px solid #ccc'
+						>
 							<SideBar display={{ base: 'none', md: 'flex' }} />
 							<Routes />
 						</HStack>

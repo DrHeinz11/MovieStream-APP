@@ -1,5 +1,13 @@
 /* eslint-disable react/prop-types */
-import { Badge, Button, Grid, HStack, Stack, Tag } from '@chakra-ui/react';
+import {
+	Badge,
+	Button,
+	Grid,
+	HStack,
+	Stack,
+	chakra,
+	Tag,
+} from '@chakra-ui/react';
 import { useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
@@ -122,7 +130,7 @@ const SeriesCard = ({ bgUrl, bgAlt, title, id, year, rating, episodes }) => {
 					<HStack spacing='0' gap='4'>
 						{' '}
 						<Badge boxShadow={'md'} w='fit-content' size='sm'>
-							Rating: {rating}
+							Rating:<chakra.span color='#bf930d'>★</chakra.span> {rating}
 						</Badge>
 						<Badge
 							boxShadow={'md'}

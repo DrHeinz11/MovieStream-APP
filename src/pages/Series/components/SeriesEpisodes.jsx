@@ -2,7 +2,7 @@ import { Button, HStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
 const SeriesEpisodes = ({ episodes, title }) => {
-	const titleTransform = title.split(' ').join('-')
+	const titleTransform = title.split(' ').join('-');
 	return (
 		<HStack
 			flexWrap='wrap'

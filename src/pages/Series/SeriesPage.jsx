@@ -9,7 +9,7 @@ const SeriesPage = () => {
 	const { data, isLoading } = useGetMoviesByIdQuery(id);
 
 	if (isLoading) return <Loader />;
-	
+
 	return (
 		<>
 			<SeriesDescription image={data?.result.image} uuid={data?.result.uuid}>
@@ -21,7 +21,10 @@ const SeriesPage = () => {
 						description={data?.result.description}
 						release={data?.result.release}
 					>
-						<SeriesEpisodes episodes={data?.result.episodes} title={data?.result.title} />
+						<SeriesEpisodes
+							episodes={data?.result.episodes}
+							title={data?.result.title}
+						/>
 					</SeriesDescriptionCopy>
 				</>
 			</SeriesDescription>

@@ -1,4 +1,4 @@
-import { Badge, Box, Heading, HStack, Text,chakra } from '@chakra-ui/react';
+import { Badge, Box, Heading, HStack, Text, chakra } from '@chakra-ui/react';
 
 const SeriesDescriptionCopy = ({
 	title,

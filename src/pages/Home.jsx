@@ -34,7 +34,10 @@ const Home = () => {
 						scrollTo={{ position: 200, behavior: 'smooth' }}
 					/>
 					<Grid
-						gridTemplateColumns='repeat(auto-fill,minmax(200px,1fr))'
+						gridTemplateColumns={{
+							base: 'repeat(auto-fill,minmax(200px,1fr))',
+							'2xl': 'repeat(auto-fill,minmax(300px,1fr))',
+						}}
 						gap='2'
 						w='full'
 						alignItems='center'
