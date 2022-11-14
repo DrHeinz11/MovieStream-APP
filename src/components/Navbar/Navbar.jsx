@@ -6,9 +6,9 @@ import MobileMenu from './components/MobileMenu/MobileMenu';
 const Navbar = props => {
 	return (
 		<HStack
-			as='nav'
-			py='4'
+			as='nav' 
 			px='6'
+			pt='10px'
 			w='full'
 			margin='0 auto'
 			justify='space-between'

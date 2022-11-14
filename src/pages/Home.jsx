@@ -16,12 +16,10 @@ const Home = () => {
 		<Stack
 			as='section'
 			w='full'
-			maxW={'1000px'}
 			px={{ base: 4, md: 10 }}
 			py='8'
 			gap='4'
 			minH='100vh'
-			borderInlineEnd='1px solid #c1c1c1'
 		>
 			{isLoading ? (
 				<Loader />

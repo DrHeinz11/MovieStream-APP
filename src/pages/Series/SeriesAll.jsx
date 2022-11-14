@@ -14,7 +14,7 @@ const SeriesAll = () => {
 		[data?.total_pages]
 	);
 	return (
-		<Stack spacing='0' gap='4' w='full' px='2'>
+		<Stack spacing='0' gap='4' w='full' px='2' py='4'>
 			{isLoading ? (
 				<Loader />
 			) : (
@@ -31,7 +31,7 @@ const SeriesAll = () => {
 						justifyContent={{ base: 'center', md: 'flex-start' }}
 						gridTemplateColumns={{
 							base: 'repeat(auto-fill,minmax(250px,350px))',
-							sm: 'repeat(auto-fill,minmax(250px,300px))',
+							sm: 'repeat(auto-fill,minmax(250px,1fr))',
 						}}
 					>
 						{data?.results.map(element => (

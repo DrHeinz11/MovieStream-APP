@@ -10,6 +10,7 @@ const Pagination = ({
 	scrollTo,
 	totalPages,
 }) => {
+	if (totalPages === 1) return;
 	const memorizedValue = useMemo(() => HandlePaginationFill(amount));
 	return (
 		<ButtonGroup
