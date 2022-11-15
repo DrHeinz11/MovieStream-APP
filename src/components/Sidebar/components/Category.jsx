@@ -1,9 +1,5 @@
 import { Stack } from '@chakra-ui/react';
-import {
-	BsCollectionPlayFill,
-	BsCameraReelsFill,
-	BsFillPuzzleFill,
-} from 'react-icons/bs';
+import { BsCollectionPlayFill, BsCameraReelsFill } from 'react-icons/bs';
 import CustomOption from './CustomOption';
 import CategoryHeading from './CategoryHeading';
 
@@ -17,9 +13,6 @@ const Category = () => {
 				</CustomOption>
 				<CustomOption route='/movie/all' title='Movie'>
 					<BsCameraReelsFill />
-				</CustomOption>
-				<CustomOption route='/genre/animacion' title='anime'>
-					<BsFillPuzzleFill />
 				</CustomOption>
 			</Stack>
 		</Stack>

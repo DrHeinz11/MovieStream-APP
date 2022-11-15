@@ -45,13 +45,24 @@ export const Api = createApi({
 			query: movieById => `movie/${movieById}`,
 		}),
 		getByGenre: builder.query({
-			query: page => `movies?page=${page}&limit=20&genres=animacion`,
+			query: page => {
+				const { query, genre } = page;
+				return `movies?page=${query}&limit=20&genres=${genre}`;
+			},
 		}),
 		getByGenreSlides: builder.query({
 			query: genre => `movies?page=1&limit=20&type=movies&genres=${genre}`,
 		}),
 		getGenre: builder.query({
 			query: () => `/genres`,
+		}),
+		getQueryByYear: builder.query({
+			query: data => {
+				const { year, page, type } = data;
+				if (type)
+					return `movies?page=${page}&limit=20&type=${type}&year=${year}`;
+				return `movies?page=${page}&limit=20&year=${year}`;
+			},
 		}),
 	}),
 });
@@ -67,4 +78,5 @@ export const {
 	useGetByGenreQuery,
 	useGetByGenreSlidesQuery,
 	useGetGenreQuery,
+	useGetQueryByYearQuery,
 } = Api;

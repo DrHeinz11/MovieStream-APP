@@ -4,9 +4,24 @@ import SeriesDescription from './components/SeriesDescription';
 import SeriesDescriptionCopy from './components/SeriesDescriptionCopy';
 import SeriesEpisodes from './components/SeriesEpisodes';
 import { Loader } from '../../components';
+// import { useDispatch } from 'react-redux';
+// import { useEffect } from 'react';
+// import { addRecents } from '../../redux/recentSlice';
 const SeriesPage = () => {
 	const { id } = useParams();
 	const { data, isLoading } = useGetMoviesByIdQuery(id);
+	// const dispatcher = useDispatch();
+
+	// useEffect(() => {
+	// 	dispatcher(
+	// 		addRecents({
+	// 			name: data?.result.title,
+	// 			id: data?.result.uuid,
+	// 			type: 'series',
+	// 			bgUrl: data?.result.image,
+	// 		})
+	// 	);
+	// }, [data]);
 
 	if (isLoading) return <Loader />;
 

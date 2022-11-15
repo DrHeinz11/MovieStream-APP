@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { BsBookmarkPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addRecents } from '../../redux/recentSlice';
 import { addSeeLater, removeSeeLater } from '../../redux/SeeLater';
 import { HandleScrollToTop } from '../../utils/HandleScrollToTop';
 
@@ -12,12 +13,12 @@ const Card = ({ bgUrl, title, id, year, rating, width = 'auto' }) => {
 
 	const dispatcher = useDispatch();
 	const handleClick = () => {
-		dispatcher(addSeeLater({ name: title, id, status: true, bgUrl: bgUrl }));
+		dispatcher(addSeeLater({ name: title, id, status: true, bgUrl }));
 		setFocus(prev => !prev);
 	};
 	const handleClickRemove = () => {
 		setFocus(prev => !prev);
-		dispatcher(removeSeeLater({ name: title, id, status: true, bgUrl: bgUrl }));
+		dispatcher(removeSeeLater({ name: title, id, status: true, bgUrl }));
 	};
 	return (
 		<Stack
@@ -68,13 +69,14 @@ const Card = ({ bgUrl, title, id, year, rating, width = 'auto' }) => {
 				</Grid>
 			)}
 			<Link
-				onClick={() =>
+				onClick={() => {
 					HandleScrollToTop({
 						direction: 'top',
 						coordinate: 0,
 						behavior: 'auto',
-					})
-				}
+					});
+					dispatcher(addRecents({ name: title, id, status: true, bgUrl }));
+				}}
 				to={`/movie/${id}`}
 			>
 				<Stack px='4' pb='4' pt='32' spacing='0' gap='2'>

@@ -10,12 +10,16 @@ import {
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-const RecentFavorites = () => {
-	const state = useSelector(store => store.seeLater);
+const RecentViews = () => {
+	const state = useSelector(store => store.recents);
 	return (
 		<Stack spacing='0' w='full' px='4' py='10'>
-			<Heading>See Later</Heading>
-			<Grid gridTemplateColumns='repeat(auto-fill,minmax(250px,1fr))' w='full'>
+			<Heading>Recent Views</Heading>
+			<Grid
+				gridTemplateColumns='repeat(auto-fill,minmax(250px,1fr))'
+				gap='4'
+				w='full'
+			>
 				{state?.map(
 					element =>
 						element.id && (
@@ -58,4 +62,4 @@ const RecentFavorites = () => {
 	);
 };
 
-export default RecentFavorites;
+export default RecentViews;

@@ -5,7 +5,7 @@ const CategoryHead = () => {
 	return (
 		<HStack display={{ base: 'none', md: 'flex' }} h='fit-content' gap='4'>
 			{' '}
-			<Link to='/see-later/'>
+			<Link to='/recent-views/'>
 				<Heading
 					as='span'
 					_hover={{ color: '#ccc', borderBottom: '1px solid #e71c61' }}

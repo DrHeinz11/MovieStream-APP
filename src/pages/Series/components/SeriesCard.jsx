@@ -26,7 +26,7 @@ const SeriesCard = ({ bgUrl, bgAlt, title, id, year, rating, episodes }) => {
 				id,
 				status: true,
 				type: 'series',
-				bgUrl: bgUrl,
+				bgUrl,
 			})
 		);
 		setFocus(prev => !prev);
@@ -39,7 +39,7 @@ const SeriesCard = ({ bgUrl, bgAlt, title, id, year, rating, episodes }) => {
 				id,
 				status: true,
 				type: 'series',
-				bgUrl: bgUrl,
+				bgUrl,
 			})
 		);
 	};

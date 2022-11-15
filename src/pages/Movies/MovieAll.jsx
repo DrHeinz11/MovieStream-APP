@@ -1,6 +1,7 @@
-import { Heading, Stack } from '@chakra-ui/react';
+import { Heading, HStack, Stack } from '@chakra-ui/react';
 import { useState } from 'react';
 import Card from '../../components/Card/Card';
+import CustomLink from '../../components/custom/CustomLink';
 import Loader from '../../components/Loader/Loader';
 import SliderContainer from '../../components/Slider/SliderContainer';
 import { useGetByGenreSlidesQuery } from '../../services/API.services';
@@ -20,7 +21,9 @@ const MovieAll = () => {
 	return (
 		<Stack overflowX='hidden' py='10' px='4' spacing='0' gap='4'>
 			<Stack gap='4' spacing='0'>
-				<Heading>Categorias</Heading>
+				<HStack>
+					<Heading>Categorias</Heading>
+				</HStack>
 				{!isLoadingSearch && (
 					<SliderContainer>
 						<MovieGenre setFilter={setFilter} />
@@ -30,7 +33,10 @@ const MovieAll = () => {
 
 			{search?.results.length > 0 && (
 				<Stack gap='4' spacing='0' w='full'>
-					<Heading>{filter.name}</Heading>
+					<HStack align='center' gap='4' spacing='0'>
+						<Heading>{filter.name}</Heading>
+						<CustomLink route={`/genre/${filter.uuid}`} />
+					</HStack>
 					<SliderContainer>
 						{search?.results?.map(element => (
 							<Card
@@ -48,7 +54,10 @@ const MovieAll = () => {
 			)}
 
 			<Stack gap='4' spacing='0'>
-				<Heading>Animacion</Heading>
+				<HStack align='center' gap='4' spacing='0'>
+					<Heading>Animacion</Heading>
+					<CustomLink route={`/genre/animacion`} />
+				</HStack>
 				<SliderContainer>
 					{action?.results?.map(element => (
 						<Card

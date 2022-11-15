@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import RecentViews from '../pages/Favorites/RecentsViews';
 import {
 	Home,
 	SeriesAll,
@@ -8,6 +9,7 @@ import {
 	SearchAll,
 	RecentFavorites,
 	GenrePage,
+	Discover,
 } from '../pages/index';
 import SeriesPlayer from '../pages/Series/SeriesPlayer';
 
@@ -23,6 +25,8 @@ const Ruotes = () => {
 			<Route path='/series/all' element={<SeriesAll />} />
 			<Route path='/search/:id' element={<SearchAll />} />
 			<Route path='/see-later/' element={<RecentFavorites />} />
+			<Route path='/recent-views/' element={<RecentViews />} />
+			<Route path='/discover' element={<Discover />} />
 		</Routes>
 	);
 };
