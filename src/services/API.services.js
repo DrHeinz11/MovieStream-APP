@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-const API = 'https://movies-app1.p.rapidapi.com/api/';
+const API = 'https://movies-app1.p.rapidapi.com/api';
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -15,7 +15,7 @@ export const Api = createApi({
 		prepareHeaders: headers => {
 			headers.set(
 				'X-RapidAPI-Key',
-				'b1d39b94ffmshff8c2a1a8d9ec98p1fd33ajsn9ef7453a6937'
+				'b16c62820cmsh4ea55ca2323cd7cp16fd8ajsn2d1bec24583c'
 			);
 			return headers;
 		},
